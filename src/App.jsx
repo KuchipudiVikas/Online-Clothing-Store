@@ -7,7 +7,7 @@ import Authentication from './routes/authentication/authentication.component';
 const Shop = () => {
   return (
     <div>
-      <h1>happy shopping</h1>
+      <h1>happy  shopping</h1>
     </div>
   )
 
