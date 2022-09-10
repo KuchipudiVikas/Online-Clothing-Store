@@ -1,5 +1,5 @@
 import Button from '../button/button.component';
-import { useState, useEffect, useContext } from 'react';
+import { useState } from 'react';
 import { userContext } from '../../contexts/user.context';
 import {
     signInWithGooglePopup,
@@ -21,7 +21,7 @@ const SignInForm = () => {
     const [formFeilds, setFormFeilds] = useState(defaultFormFeilds);
     const { email, password, } = formFeilds;
 
-    const { setCurrentUser } = useContext(userContext);
+    // const { setCurrentUser } = useContext(userContext);
 
     // useEffect(() => {
     //     (async () => {
@@ -32,8 +32,7 @@ const SignInForm = () => {
     //     })();
     // }, []);
     const signInWithGoogle = async () => {
-        const { user } = await signInWithGooglePopup();
-        await createUserDocumentFromAuth(user);
+        await signInWithGooglePopup();
 
     }
 
@@ -43,7 +42,7 @@ const SignInForm = () => {
 
         try {
             const { user } = await signInAuthUserWithEmailAndPassword(email, password);
-            setCurrentUser(user);
+            // setCurrentUser(user);
             resetForm();
 
 
